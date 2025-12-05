@@ -1,14 +1,18 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { View, ActivityIndicator, StyleSheet } from 'react-native';
 import { useRouter, SplashScreen } from 'expo-router';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAuth } from '@/contexts/AuthContext';
 import { useData } from '@/contexts/DataContext';
 import Colors from '@/constants/colors';
+
+const TOS_ACCEPTED_KEY = '@sourceimpact_tos_accepted';
 
 export default function IndexScreen() {
   const router = useRouter();
   const { isAuthenticated, isLoading: authLoading } = useAuth();
   const { isLoading: dataLoading } = useData();
+  const [isChecking, setIsChecking] = useState(true);
 
   useEffect(() => {
     const navigate = async () => {
@@ -16,15 +20,30 @@ export default function IndexScreen() {
         await SplashScreen.hideAsync();
         
         if (isAuthenticated) {
-          router.replace('/(tabs)/home');
+          try {
+            const tosAccepted = await AsyncStorage.getItem(TOS_ACCEPTED_KEY);
+            if (!tosAccepted) {
+              router.replace('/terms-of-service');
+            } else {
+              router.replace('/(tabs)/home');
+            }
+          } catch (error) {
+            console.error('Failed to check ToS acceptance:', error);
+            router.replace('/(tabs)/home');
+          }
         } else {
           router.replace('/onboarding');
         }
+        setIsChecking(false);
       }
     };
 
     navigate();
   }, [isAuthenticated, authLoading, dataLoading, router]);
+
+  if (isChecking) {
+    return null;
+  }
 
   return (
     <View style={styles.container}>

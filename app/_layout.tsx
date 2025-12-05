@@ -4,7 +4,6 @@ import * as SplashScreen from "expo-splash-screen";
 import React from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { AppProviders } from "@/contexts/AppProviders";
-import TermsOfServiceModal from "@/components/TermsOfServiceModal";
 import { trpc, trpcClient } from "@/lib/trpc";
 
 SplashScreen.preventAutoHideAsync();
@@ -38,7 +37,6 @@ export default function RootLayout() {
         <GestureHandlerRootView style={{ flex: 1 }}>
           <AppProviders>
             <RootLayoutNav />
-            <TermsOfServiceModal />
           </AppProviders>
         </GestureHandlerRootView>
       </QueryClientProvider>

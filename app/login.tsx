@@ -3,10 +3,13 @@ import { View, Text, StyleSheet, TouchableOpacity, TextInput, Alert, KeyboardAvo
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { LogIn, User, Lock, Zap } from 'lucide-react-native';
 import Colors from '@/constants/colors';
 import { useAuth } from '@/contexts/AuthContext';
 import type { InfluencerProfile, SponsorProfile, AgentProfile, AdminProfile } from '@/types';
+
+const TOS_ACCEPTED_KEY = '@sourceimpact_tos_accepted';
 
 type TestUser = {
   username: string;
@@ -130,6 +133,7 @@ export default function LoginScreen() {
 
       if (user) {
         await login(user.profile);
+        await AsyncStorage.setItem(TOS_ACCEPTED_KEY, 'true');
         router.replace('/(tabs)/home');
       } else {
         Alert.alert(
@@ -145,6 +149,7 @@ export default function LoginScreen() {
     setIsLoading(true);
     setTimeout(async () => {
       await login(TEST_USERS[userIndex].profile);
+      await AsyncStorage.setItem(TOS_ACCEPTED_KEY, 'true');
       router.replace('/(tabs)/home');
     }, 300);
   };
