@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView, Alert, ActivityIndicator } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter, Stack } from 'expo-router';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
 import { Instagram, Twitter, Youtube, Facebook } from 'lucide-react-native';
 import { useAuth } from '@/contexts/AuthContext';
 import Colors from '@/constants/colors';
@@ -51,7 +51,7 @@ export default function VerifySocialsScreen() {
   const { user, updateProfile } = useAuth();
   const [verifying, setVerifying] = useState<string | null>(null);
   const [accounts, setAccounts] = useState<Record<string, string>>({});
-  const insets = useSafeAreaInsets();
+
 
   const simulateVerification = async (platform: string, username: string): Promise<SocialAccount> => {
     await new Promise(resolve => setTimeout(resolve, 2000));
@@ -167,7 +167,7 @@ export default function VerifySocialsScreen() {
         >
           <Text style={styles.title}>Connect Your Socials</Text>
           <Text style={styles.subtitle}>
-            Verify your social media accounts to build trust with sponsors. We'll fetch your real follower counts.
+            Verify your social media accounts to build trust with sponsors. We&apos;ll fetch your real follower counts.
           </Text>
 
           <View style={styles.platformsList}>

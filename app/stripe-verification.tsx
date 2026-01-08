@@ -275,7 +275,7 @@ export default function StripeVerificationScreen() {
         {renderStatusCard()}
 
         <View style={styles.infoSection}>
-          <Text style={styles.infoTitle}>What you'll need:</Text>
+          <Text style={styles.infoTitle}>What you&apos;ll need:</Text>
           
           <View style={styles.infoItem}>
             <View style={styles.infoIconContainer}>

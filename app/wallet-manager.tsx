@@ -442,7 +442,7 @@ export default function WalletManagerScreen() {
         <View style={styles.infoSection}>
           <Text style={styles.infoTitle}>About ImPAct Token</Text>
           <Text style={styles.infoText}>
-            ImPAct is our platform's exclusive cryptocurrency token. Each IMPACT token maintains a stable 1:1 value
+            ImPAct is our platform&apos;s exclusive cryptocurrency token. Each IMPACT token maintains a stable 1:1 value
             with the US Dollar ($1 IMPACT = $1 USD).
           </Text>
           <Text style={styles.infoText}>
@@ -527,7 +527,7 @@ export default function WalletManagerScreen() {
 
               <Text style={styles.emailConfirmTitle}>Confirm Your Withdrawal</Text>
               <Text style={styles.emailConfirmText}>
-                For security, withdrawals over $100 require email confirmation. We've sent a 6-digit code to:
+                For security, withdrawals over $100 require email confirmation. We&apos;ve sent a 6-digit code to:
               </Text>
               <Text style={styles.emailAddress}>{user?.email}</Text>
 
@@ -574,7 +574,7 @@ export default function WalletManagerScreen() {
                   Alert.alert('Code Sent', 'A new confirmation code has been sent to your email.');
                 }}
               >
-                <Text style={styles.resendCodeText}>Didn't receive the code? Resend</Text>
+                <Text style={styles.resendCodeText}>Didn&apos;t receive the code? Resend</Text>
               </TouchableOpacity>
             </View>
           </View>

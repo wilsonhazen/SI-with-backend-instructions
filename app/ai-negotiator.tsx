@@ -178,11 +178,7 @@ Base recommendations on campaign goals, influencer market rates, and ROI expecta
     }
   };
 
-  const getRangeColor = (value: number, min: number, max: number) => {
-    if (value < min) return Colors.danger;
-    if (value > max) return Colors.warning;
-    return Colors.success;
-  };
+
 
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
@@ -202,7 +198,7 @@ Base recommendations on campaign goals, influencer market rates, and ROI expecta
         <TrendingUp size={32} color="#FFFFFF" />
         <View style={styles.headerTextContainer}>
           <Text style={styles.headerTitle}>AI Negotiator</Text>
-          <Text style={styles.headerSubtitle}>Get paid what you're worth</Text>
+          <Text style={styles.headerSubtitle}>Get paid what you&apos;re worth</Text>
         </View>
         <Sparkles size={24} color="#FFFFFF" />
       </LinearGradient>

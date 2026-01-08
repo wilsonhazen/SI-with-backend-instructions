@@ -126,14 +126,14 @@ export default function DealsScreen() {
           <View style={styles.dealParties}>
             <TouchableOpacity 
               style={styles.party}
-              onPress={() => router.push(`/view-profile?userId=${deal.influencerId}`)}
+              onPress={() => (router.push as any)(`/view-profile?userId=${deal.influencerId}`)}
             >
               <Text style={styles.partyLabel}>Influencer</Text>
               <Text style={styles.partyName}>{deal.influencerName}</Text>
             </TouchableOpacity>
             <TouchableOpacity 
               style={styles.party}
-              onPress={() => router.push(`/view-profile?userId=${deal.sponsorId}`)}
+              onPress={() => (router.push as any)(`/view-profile?userId=${deal.sponsorId}`)}
             >
               <Text style={styles.partyLabel}>Sponsor</Text>
               <Text style={styles.partyName}>{deal.sponsorName}</Text>
@@ -141,7 +141,7 @@ export default function DealsScreen() {
             {deal.agentName && deal.agentId && (
               <TouchableOpacity 
                 style={styles.party}
-                onPress={() => router.push(`/view-profile?userId=${deal.agentId}`)}
+                onPress={() => (router.push as any)(`/view-profile?userId=${deal.agentId}`)}
               >
                 <Text style={styles.partyLabel}>Agent</Text>
                 <Text style={styles.partyName}>{deal.agentName}</Text>

@@ -219,7 +219,7 @@ RECOMMENDATIONS:
               <Text style={styles.introTitle}>Optimize Your Profile</Text>
               <Text style={styles.introSubtitle}>
                 Get AI-powered insights to improve your profile and attract more opportunities. 
-                We'll analyze your profile across multiple dimensions and provide actionable recommendations.
+                We&apos;ll analyze your profile across multiple dimensions and provide actionable recommendations.
               </Text>
 
               <View style={styles.benefitsContainer}>

@@ -121,7 +121,7 @@ export default function HomeScreen() {
         </View>
         <View style={styles.headerActions}>
           <TouchableOpacity 
-            onPress={() => router.push('/notifications')}
+            onPress={() => (router.push as any)('/notifications')}
             style={styles.bellContainer}
           >
             <Bell size={24} color={Colors.text} />
@@ -132,7 +132,7 @@ export default function HomeScreen() {
             )}
           </TouchableOpacity>
           <TouchableOpacity 
-            onPress={() => router.push('/profile')}
+            onPress={() => (router.push as any)('/profile')}
             style={styles.avatarContainer}
           >
             <Image source={{ uri: user.avatar }} style={styles.avatar} />
@@ -173,7 +173,7 @@ export default function HomeScreen() {
 
       <TouchableOpacity 
         style={styles.earningsBanner}
-        onPress={() => router.push('/rewards')}
+        onPress={() => (router.push as any)('/rewards')}
       >
         <LinearGradient colors={[Colors.warning, Colors.secondary]} style={styles.earningsGradient}>
           <View style={styles.earningsContent}>
@@ -194,7 +194,7 @@ export default function HomeScreen() {
         <View style={styles.actionsGrid}>
           <TouchableOpacity 
             style={styles.actionCard}
-            onPress={() => router.push('/search')}
+            onPress={() => (router.push as any)('/search')}
           >
             <View style={[styles.actionIcon, { backgroundColor: Colors.warning + '20' }]}>
               <Search size={24} color={Colors.warning} />
@@ -205,7 +205,7 @@ export default function HomeScreen() {
 
           <TouchableOpacity 
             style={styles.actionCard}
-            onPress={() => router.push('/ai-matching')}
+            onPress={() => (router.push as any)('/ai-matching')}
           >
             <View style={[styles.actionIcon, { backgroundColor: Colors.secondary + '20' }]}>
               <Sparkles size={24} color={Colors.secondary} />
@@ -216,7 +216,7 @@ export default function HomeScreen() {
 
           <TouchableOpacity 
             style={styles.actionCard}
-            onPress={() => router.push('/my-applications')}
+            onPress={() => (router.push as any)('/my-applications')}
           >
             <View style={[styles.actionIcon, { backgroundColor: Colors.primary + '20' }]}>
               <Briefcase size={24} color={Colors.primary} />
@@ -227,7 +227,7 @@ export default function HomeScreen() {
 
           <TouchableOpacity 
             style={styles.actionCard}
-            onPress={() => router.push('/transactions')}
+            onPress={() => (router.push as any)('/transactions')}
           >
             <View style={[styles.actionIcon, { backgroundColor: Colors.success + '20' }]}>
               <DollarSign size={24} color={Colors.success} />
@@ -238,7 +238,7 @@ export default function HomeScreen() {
 
           <TouchableOpacity 
             style={styles.actionCard}
-            onPress={() => router.push('/ai-assistant')}
+            onPress={() => (router.push as any)('/ai-assistant')}
           >
             <View style={[styles.actionIcon, { backgroundColor: Colors.info + '20' }]}>
               <Bot size={24} color={Colors.info} />
@@ -249,7 +249,7 @@ export default function HomeScreen() {
 
           <TouchableOpacity 
             style={styles.actionCard}
-            onPress={() => router.push('/ai-profile-optimizer')}
+            onPress={() => (router.push as any)('/ai-profile-optimizer')}
           >
             <View style={[styles.actionIcon, { backgroundColor: Colors.accent + '20' }]}>
               <Target size={24} color={Colors.accent} />
@@ -264,7 +264,7 @@ export default function HomeScreen() {
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>Suggested For You</Text>
-            <TouchableOpacity onPress={() => router.push('/ai-matching')}>
+            <TouchableOpacity onPress={() => (router.push as any)('/ai-matching')}>
               <Text style={styles.seeAllText}>See All</Text>
             </TouchableOpacity>
           </View>
@@ -273,7 +273,7 @@ export default function HomeScreen() {
               <TouchableOpacity 
                 key={match.gig.id}
                 style={styles.gigCard}
-                onPress={() => router.push(`/gig-details?id=${match.gig.id}`)}
+                onPress={() => (router.push as any)(`/gig-details?id=${match.gig.id}`)}
               >
                 <LinearGradient colors={[Colors.primary, Colors.secondary]} style={styles.gigCardGradient}>
                   <View style={styles.matchBadge}>
@@ -303,7 +303,7 @@ export default function HomeScreen() {
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionTitle}>Trending Opportunities</Text>
-          <TouchableOpacity onPress={() => router.push('/search')}>
+          <TouchableOpacity onPress={() => (router.push as any)('/search')}>
             <Text style={styles.seeAllText}>See All</Text>
           </TouchableOpacity>
         </View>
@@ -312,7 +312,7 @@ export default function HomeScreen() {
             <TouchableOpacity 
               key={gig.id}
               style={styles.gigCard}
-              onPress={() => router.push(`/gig-details?id=${gig.id}`)}
+              onPress={() => (router.push as any)(`/gig-details?id=${gig.id}`)}
             >
               <LinearGradient colors={[Colors.darkCard, Colors.backgroundSecondary]} style={styles.gigCardGradient}>
                 <Text style={styles.gigTitle} numberOfLines={2}>{gig.title}</Text>
@@ -366,7 +366,7 @@ export default function HomeScreen() {
         </View>
         <View style={styles.headerActions}>
           <TouchableOpacity 
-            onPress={() => router.push('/notifications')}
+            onPress={() => (router.push as any)('/notifications')}
             style={styles.bellContainer}
           >
             <Bell size={24} color={Colors.text} />
@@ -377,7 +377,7 @@ export default function HomeScreen() {
             )}
           </TouchableOpacity>
           <TouchableOpacity 
-            onPress={() => router.push('/profile')}
+            onPress={() => (router.push as any)('/profile')}
             style={styles.avatarContainer}
           >
             <Image source={{ uri: user.avatar }} style={styles.avatar} />
@@ -421,7 +421,7 @@ export default function HomeScreen() {
         <View style={styles.actionsGrid}>
           <TouchableOpacity 
             style={styles.actionCard}
-            onPress={() => router.push('/ai-assistant')}
+            onPress={() => (router.push as any)('/ai-assistant')}
           >
             <View style={[styles.actionIcon, { backgroundColor: Colors.primary + '20' }]}>
               <Bot size={24} color={Colors.primary} />
@@ -432,7 +432,7 @@ export default function HomeScreen() {
 
           <TouchableOpacity 
             style={styles.actionCard}
-            onPress={() => router.push('/ai-matching')}
+            onPress={() => (router.push as any)('/ai-matching')}
           >
             <View style={[styles.actionIcon, { backgroundColor: Colors.secondary + '20' }]}>
               <Sparkles size={24} color={Colors.secondary} />
@@ -443,7 +443,7 @@ export default function HomeScreen() {
 
           <TouchableOpacity 
             style={styles.actionCard}
-            onPress={() => router.push('/ai-contract-generator')}
+            onPress={() => (router.push as any)('/ai-contract-generator')}
           >
             <View style={[styles.actionIcon, { backgroundColor: Colors.info + '20' }]}>
               <FileText size={24} color={Colors.info} />
@@ -454,7 +454,7 @@ export default function HomeScreen() {
 
           <TouchableOpacity 
             style={styles.actionCard}
-            onPress={() => router.push('/manage-gigs')}
+            onPress={() => (router.push as any)('/manage-gigs')}
           >
             <View style={[styles.actionIcon, { backgroundColor: Colors.warning + '20' }]}>
               <Briefcase size={24} color={Colors.warning} />
@@ -465,7 +465,7 @@ export default function HomeScreen() {
 
           <TouchableOpacity 
             style={styles.actionCard}
-            onPress={() => router.push('/search')}
+            onPress={() => (router.push as any)('/search')}
           >
             <View style={[styles.actionIcon, { backgroundColor: Colors.success + '20' }]}>
               <Users size={24} color={Colors.success} />
@@ -476,7 +476,7 @@ export default function HomeScreen() {
 
           <TouchableOpacity 
             style={styles.actionCard}
-            onPress={() => router.push('/deal-management')}
+            onPress={() => (router.push as any)('/deal-management')}
           >
             <View style={[styles.actionIcon, { backgroundColor: Colors.danger + '20' }]}>
               <Handshake size={24} color={Colors.danger} />
@@ -491,7 +491,7 @@ export default function HomeScreen() {
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>Suggested For You</Text>
-            <TouchableOpacity onPress={() => router.push('/ai-matching')}>
+            <TouchableOpacity onPress={() => (router.push as any)('/ai-matching')}>
               <Text style={styles.seeAllText}>See All</Text>
             </TouchableOpacity>
           </View>
@@ -500,7 +500,7 @@ export default function HomeScreen() {
               <TouchableOpacity 
                 key={match.influencer.id}
                 style={styles.influencerCard}
-                onPress={() => router.push(`/view-profile?userId=${match.influencer.id}`)}
+                onPress={() => (router.push as any)(`/view-profile?userId=${match.influencer.id}`)}
               >
                 <LinearGradient colors={[Colors.primary, Colors.secondary]} style={styles.influencerCardGradient}>
                   <View style={styles.matchBadge}>
@@ -531,7 +531,7 @@ export default function HomeScreen() {
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionTitle}>Top Influencers</Text>
-          <TouchableOpacity onPress={() => router.push('/search')}>
+          <TouchableOpacity onPress={() => (router.push as any)('/search')}>
             <Text style={styles.seeAllText}>See All</Text>
           </TouchableOpacity>
         </View>
@@ -540,7 +540,7 @@ export default function HomeScreen() {
             <TouchableOpacity 
               key={influencer.id}
               style={styles.influencerCard}
-              onPress={() => router.push(`/view-profile?userId=${influencer.id}`)}
+              onPress={() => (router.push as any)(`/view-profile?userId=${influencer.id}`)}
             >
               <LinearGradient colors={[Colors.darkCard, Colors.backgroundSecondary]} style={styles.influencerCardGradient}>
                 <Image source={{ uri: influencer.avatar }} style={styles.influencerAvatar} />
@@ -595,7 +595,7 @@ export default function HomeScreen() {
         </View>
         <View style={styles.headerActions}>
           <TouchableOpacity 
-            onPress={() => router.push('/notifications')}
+            onPress={() => (router.push as any)('/notifications')}
             style={styles.bellContainer}
           >
             <Bell size={24} color={Colors.text} />
@@ -606,7 +606,7 @@ export default function HomeScreen() {
             )}
           </TouchableOpacity>
           <TouchableOpacity 
-            onPress={() => router.push('/profile')}
+            onPress={() => (router.push as any)('/profile')}
             style={styles.avatarContainer}
           >
             <Image source={{ uri: user.avatar }} style={styles.avatar} />
@@ -650,7 +650,7 @@ export default function HomeScreen() {
         <View style={styles.actionsGrid}>
           <TouchableOpacity 
             style={styles.actionCard}
-            onPress={() => router.push('/ai-assistant')}
+            onPress={() => (router.push as any)('/ai-assistant')}
           >
             <View style={[styles.actionIcon, { backgroundColor: Colors.primary + '20' }]}>
               <Bot size={24} color={Colors.primary} />
@@ -661,7 +661,7 @@ export default function HomeScreen() {
 
           <TouchableOpacity 
             style={styles.actionCard}
-            onPress={() => router.push('/ai-matching')}
+            onPress={() => (router.push as any)('/ai-matching')}
           >
             <View style={[styles.actionIcon, { backgroundColor: Colors.secondary + '20' }]}>
               <Sparkles size={24} color={Colors.secondary} />
@@ -672,7 +672,7 @@ export default function HomeScreen() {
 
           <TouchableOpacity 
             style={styles.actionCard}
-            onPress={() => router.push('/agent-dashboard')}
+            onPress={() => (router.push as any)('/agent-dashboard')}
           >
             <View style={[styles.actionIcon, { backgroundColor: Colors.info + '20' }]}>
               <BarChart3 size={24} color={Colors.info} />
@@ -683,7 +683,7 @@ export default function HomeScreen() {
 
           <TouchableOpacity 
             style={styles.actionCard}
-            onPress={() => router.push('/agent-invites')}
+            onPress={() => (router.push as any)('/agent-invites')}
           >
             <View style={[styles.actionIcon, { backgroundColor: Colors.warning + '20' }]}>
               <UserPlus size={24} color={Colors.warning} />
@@ -694,7 +694,7 @@ export default function HomeScreen() {
 
           <TouchableOpacity 
             style={styles.actionCard}
-            onPress={() => router.push('/ai-contract-generator')}
+            onPress={() => (router.push as any)('/ai-contract-generator')}
           >
             <View style={[styles.actionIcon, { backgroundColor: Colors.success + '20' }]}>
               <FileText size={24} color={Colors.success} />
@@ -705,7 +705,7 @@ export default function HomeScreen() {
 
           <TouchableOpacity 
             style={styles.actionCard}
-            onPress={() => router.push('/transactions')}
+            onPress={() => (router.push as any)('/transactions')}
           >
             <View style={[styles.actionIcon, { backgroundColor: Colors.danger + '20' }]}>
               <DollarSign size={24} color={Colors.danger} />
@@ -719,14 +719,14 @@ export default function HomeScreen() {
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionTitle}>Network Opportunities</Text>
-          <TouchableOpacity onPress={() => router.push('/search')}>
+          <TouchableOpacity onPress={() => (router.push as any)('/search')}>
             <Text style={styles.seeAllText}>See All</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.networkGrid}>
           <TouchableOpacity 
             style={styles.networkCard}
-            onPress={() => router.push('/search')}
+            onPress={() => (router.push as any)('/search')}
           >
             <LinearGradient colors={[Colors.primary, Colors.secondary]} style={styles.networkCardGradient}>
               <Users size={32} color="#FFFFFF" />
@@ -736,7 +736,7 @@ export default function HomeScreen() {
           </TouchableOpacity>
           <TouchableOpacity 
             style={styles.networkCard}
-            onPress={() => router.push('/search')}
+            onPress={() => (router.push as any)('/search')}
           >
             <LinearGradient colors={[Colors.success, '#10b981']} style={styles.networkCardGradient}>
               <Briefcase size={32} color="#FFFFFF" />
